@@ -113,7 +113,6 @@
 </div>
 <script src="/js/app.js"></script>
 <script>
-    // Дополнительные функции для нового дизайна
     function switchTab(tab) {
         const loginTab = document.getElementById('loginTab');
         const registerTab = document.getElementById('registerTab');
@@ -122,11 +121,10 @@
         const benefitCategoryGroup = document.getElementById('benefitCategoryGroup');
         const registerBtn = document.getElementById('registerBtn');
         const loginBtn = document.getElementById('loginBtn');
-        // Убираем активный класс со всех вкладок
         loginTab.classList.remove('active');
         registerTab.classList.remove('active');
         if (tab === 'login') {
-            // Показываем вкладку Вход
+            //Вкладка Входа
             loginTab.classList.add('active');
             fullNameGroup.style.display = 'none';
             passwordConfirmGroup.style.display = 'none';
@@ -134,7 +132,7 @@
             registerBtn.style.display = 'none';
             loginBtn.style.display = 'block';
         } else {
-            // Показываем вкладку Регистрация
+            //Вкладка Регистрации
             registerTab.classList.add('active');
             fullNameGroup.style.display = 'block';
             passwordConfirmGroup.style.display = 'block';
@@ -143,10 +141,8 @@
             loginBtn.style.display = 'none';
         }
     }
-    // При загрузке страницы показываем вкладку Вход
     document.addEventListener('DOMContentLoaded', function() {
         switchTab('login');
-        // Закрытие модального окна по клику на оверлей
         const modal = document.getElementById('authModal');
         modal.addEventListener('click', function(e) {
             if (e.target.classList.contains('modal-overlay')) {
