@@ -1,51 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
 :root {
-    --primary: #9C7BFF;          /* Основной цвет - лавандовый */
-    --primary-light: #B39DDB;    /* Светлый лавандовый */
-    --primary-lighter: #D1C4E9;  /* Очень светлый лавандовый */
-    --primary-dark: #7E57C2;     /* Темный лавандовый */
+    --primary: #9C7BFF; 
+    --primary-light: #B39DDB; 
+    --primary-lighter: #D1C4E9;
+    --primary-dark: #7E57C2;    
     --gradient-primary: linear-gradient(135deg, #9C7BFF 0%, #7E57C2 100%);
-    --secondary: #FF6584;        /* Вторичный цвет */
-    --background: #F8F9FF;       /* Фон приложения */
-    --surface: #FFFFFF;          /* Поверхности */
-    --sidebar-bg: #FFFFFF;       /* Фон сайдбара */
-    --text-primary: #2D3047;     /* Основной текст */
-    --text-secondary: #6B7280;   /* Вторичный текст */
-    --text-light: #9CA3AF;       /* Светлый текст */
-    --border: #E5E7EB;          /* Границы */
-    --border-hover: #D1D5DB;    /* Границы при наведении */
-    --success: #10B981;         /* Успех */
-    --error: #EF4444;           /* Ошибка */
-    --warning: #F59E0B;         /* Предупреждение */
-
-    /* Тени */
+    --secondary: #FF6584;    
+    --background: #F8F9FF;  
+    --surface: #FFFFFF;      
+    --sidebar-bg: #FFFFFF;     
+    --text-primary: #2D3047;    
+    --text-secondary: #6B7280;
+    --text-light: #9CA3AF; 
+    --border: #E5E7EB; 
+    --border-hover: #D1D5DB; 
+    --success: #10B981; 
+    --error: #EF4444;
+    --warning: #F59E0B; 
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
-
-    /* Скругления */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 20px;
     --radius-full: 9999px;
-
-    /* Отступы */
     --space-xs: 4px;
     --space-sm: 8px;
     --space-md: 16px;
     --space-lg: 24px;
     --space-xl: 32px;
 }
-
-/* БАЗОВЫЕ СТИЛИ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--background);
@@ -54,14 +45,11 @@ body {
     overflow: hidden;
     height: 100vh;
 }
-
 .container {
     display: flex;
     height: 100vh;
     background: var(--background);
 }
-
-/* ========== САЙДБАР ========== */
 .sidebar {
     width: 400px;
     min-width: 400px;
@@ -74,8 +62,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* ШАПКА САЙДБАРА - СУПЕР КРАСИВАЯ КАК НА СКРИНШОТЕ */
 .sidebar-header {
     padding: 28px 24px 20px 24px;
     background: linear-gradient(135deg,
@@ -89,7 +75,6 @@ body {
     box-shadow: 0 4px 20px rgba(138, 43, 226, 0.3);
     min-height: 120px;
 }
-
 .sidebar-header::before {
     content: '';
     position: absolute;
@@ -99,7 +84,6 @@ body {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
 }
-
 .sidebar-header::after {
     content: '';
     position: absolute;
@@ -110,7 +94,6 @@ body {
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     opacity: 0.3;
 }
-
 .sidebar-header h2 {
     font-family: 'Montserrat', 'Poppins', sans-serif;
     font-size: 32px;
@@ -133,7 +116,6 @@ body {
     text-transform: uppercase;
     padding-bottom: 12px;
 }
-
 .sidebar-header h2::after {
     content: '';
     position: absolute;
@@ -145,7 +127,6 @@ body {
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
-
 .sidebar-subtitle {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.95);
@@ -158,8 +139,7 @@ body {
     text-transform: uppercase;
     font-weight: 500;
 }
-
-/* ПОИСК И ФИЛЬТРЫ - ПОД ШАПКОЙ */
+/*поиск и фильтры */
 .search-section {
     padding: 20px 24px;
     background: var(--surface);
@@ -167,15 +147,13 @@ body {
     position: relative;
     z-index: 3;
 }
-
 .search-container {
     display: flex;
     gap: 12px;
     align-items: center;
     width: 100%;
 }
-
-/* ПОЛЕ ПОИСКА */
+/* поле поиска */
 #searchInput {
     flex: 1;
     padding: 15px 18px;
@@ -193,20 +171,17 @@ body {
     box-shadow: 0 3px 10px rgba(156, 123, 255, 0.15);
     font-weight: 500;
 }
-
 #searchInput:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(156, 123, 255, 0.2);
     transform: translateY(-1px);
 }
-
 #searchInput::placeholder {
     color: #A8A8C8;
     font-weight: 400;
 }
-
-/* КНОПКА ФИЛЬТРОВ */
+/*фнопка фильтров */
 #filterToggleBtn {
     width: 52px;
     height: 52px;
@@ -223,7 +198,6 @@ body {
     justify-content: center;
     box-shadow: 0 3px 10px rgba(156, 123, 255, 0.15);
 }
-
 #filterToggleBtn:hover {
     background: var(--primary);
     color: white;
@@ -231,21 +205,18 @@ body {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 20px rgba(156, 123, 255, 0.25);
 }
-
 #filterToggleBtn.active {
     background: var(--primary);
     color: white;
     border-color: var(--primary);
     animation: pulse 2s infinite;
 }
-
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(156, 123, 255, 0.4); }
     70% { box-shadow: 0 0 0 10px rgba(156, 123, 255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(156, 123, 255, 0); }
 }
-
-/* ФИЛЬТРЫ */
+/*фильтры */
 #filtersContainer {
     background: var(--surface);
     padding: 22px;
@@ -256,12 +227,10 @@ body {
     animation: slideDown 0.3s ease;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
-
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-15px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 #filtersContainer select {
     width: 100%;
     padding: 14px 18px;
@@ -281,18 +250,15 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     font-weight: 500;
 }
-
 #filtersContainer select:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(156, 123, 255, 0.15);
     transform: translateY(-1px);
 }
-
 #filtersContainer select:hover {
     border-color: var(--primary-light);
 }
-
 #filtersContainer label {
     display: flex;
     align-items: center;
@@ -307,12 +273,10 @@ body {
     border-radius: 8px;
     padding: 12px;
 }
-
 #filtersContainer label:hover {
     color: var(--primary);
     background: rgba(156, 123, 255, 0.05);
 }
-
 #filtersContainer input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -324,12 +288,10 @@ body {
     appearance: none;
     background: var(--background);
 }
-
 #filtersContainer input[type="checkbox"]:checked {
     background: var(--primary);
     border-color: var(--primary);
 }
-
 #filtersContainer input[type="checkbox"]:checked::after {
     content: '✓';
     position: absolute;
@@ -340,7 +302,6 @@ body {
     font-size: 14px;
     font-weight: bold;
 }
-
 #viewTitle {
     padding: 18px 24px;
     font-size: 20px;
@@ -350,29 +311,25 @@ body {
     border-bottom: 1px solid var(--border);
     letter-spacing: -0.3px;
 }
-
-/* СПИСОК ОРГАНИЗАЦИЙ */
+/*организации */
 .sidebar-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
-
 #viewContent {
     flex: 1;
     overflow-y: auto;
     padding: var(--space-md);
     background: var(--background);
 }
-
 #orgList {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
     min-height: 0;
 }
-
 .org-item {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -385,19 +342,16 @@ body {
     flex-shrink: 0;
     overflow: hidden;
 }
-
 .org-item:hover {
     transform: translateY(-3px);
     border-color: var(--primary-light);
     box-shadow: var(--shadow-lg);
 }
-
 .org-item.active {
     border-color: var(--primary);
     background: linear-gradient(135deg, rgba(156, 123, 255, 0.05) 0%, rgba(156, 123, 255, 0.12) 100%);
     box-shadow: 0 0 0 3px rgba(156, 123, 255, 0.15);
 }
-
 .org-name {
     font-size: 1.15rem;
     font-weight: 700;
@@ -407,7 +361,6 @@ body {
     justify-content: space-between;
     align-items: flex-start;
 }
-
 .org-category {
     font-size: 0.85rem;
     color: var(--primary);
@@ -419,14 +372,12 @@ body {
     font-weight: 600;
     border: 1px solid rgba(156, 123, 255, 0.2);
 }
-
 .org-address {
     font-size: 0.95rem;
     color: var(--text-secondary);
     margin-bottom: var(--space-xs);
     line-height: 1.5;
 }
-
 .org-working-hours {
     font-size: 0.9rem;
     color: var(--text-light);
@@ -435,7 +386,6 @@ body {
     gap: var(--space-xs);
     margin-top: var(--space-sm);
 }
-
 .org-status {
     font-weight: 700;
     margin-left: auto;
@@ -443,19 +393,16 @@ body {
     padding: 4px 10px;
     border-radius: 20px;
 }
-
 .org-status-open {
     color: var(--success);
     background: rgba(16, 185, 129, 0.1);
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
-
 .org-status-closed {
     color: var(--error);
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
-
 .favorite-btn {
     position: absolute;
     top: var(--space-lg);
@@ -473,28 +420,23 @@ body {
     justify-content: center;
     border-radius: 50%;
 }
-
 .favorite-btn:hover {
     background: rgba(255, 215, 0, 0.15);
     color: #FFD700;
     transform: scale(1.2);
 }
-
 .favorite-btn.active {
     color: #FFD700;
     animation: heartBeat 1.5s ease infinite;
 }
-
 .favorite-btn.active:hover {
     color: #FFA500;
 }
-
 @keyframes heartBeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
-
 .loading-state {
     display: flex;
     flex-direction: column;
@@ -504,7 +446,6 @@ body {
     color: var(--text-light);
     gap: var(--space-md);
 }
-
 .loader {
     width: 50px;
     height: 50px;
@@ -517,8 +458,7 @@ body {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
-
-/* ========== ВКЛАДКА "МОЙ ПРОФИЛЬ" ========== */
+/*вкладка "мой профиль"*/
 .profile-content {
     padding: 28px;
     background: var(--surface);
@@ -529,7 +469,6 @@ body {
     border-radius: 16px;
     box-shadow: var(--shadow-md);
 }
-
 .profile-header {
     display: flex;
     align-items: center;
@@ -537,7 +476,6 @@ body {
     padding-bottom: 24px;
     border-bottom: 2px solid var(--border);
 }
-
 .profile-avatar {
     width: 90px;
     height: 90px;
@@ -552,13 +490,11 @@ body {
     border: 5px solid white;
     animation: float 3s ease-in-out infinite;
 }
-
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
-
 .profile-info h3 {
     font-size: 22px;
     font-weight: 800;
@@ -566,7 +502,6 @@ body {
     margin-bottom: 6px;
     letter-spacing: -0.3px;
 }
-
 .profile-email {
     font-size: 15px;
     color: var(--text-secondary);
@@ -576,19 +511,16 @@ body {
     border-radius: 20px;
     display: inline-block;
 }
-
 .profile-form {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-
 .form-row {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .form-label {
     display: flex;
     align-items: center;
@@ -599,13 +531,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .form-label i {
     color: var(--primary);
     font-size: 18px;
     width: 24px;
 }
-
 .profile-input {
     padding: 14px 18px;
     border: 2px solid var(--border);
@@ -616,7 +546,6 @@ body {
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-}
 
 .profile-input:focus {
     outline: none;
@@ -624,7 +553,6 @@ body {
     box-shadow: 0 0 0 4px rgba(156, 123, 255, 0.15);
     transform: translateY(-1px);
 }
-
 .profile-select {
     padding: 14px 18px;
     border: 2px solid var(--border);
@@ -642,20 +570,17 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
-
 .profile-select:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(156, 123, 255, 0.15);
     transform: translateY(-1px);
 }
-
 .profile-buttons {
     display: flex;
     gap: 16px;
     margin-top: 20px;
 }
-
 .save-btn {
     flex: 1;
     padding: 16px 28px;
@@ -675,16 +600,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .save-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(156, 123, 255, 0.5);
 }
-
 .save-btn:active {
     transform: translateY(-1px);
 }
-
 #profileMessage {
     margin-top: 20px;
     padding: 16px;
@@ -695,27 +617,23 @@ body {
     display: none;
     animation: slideUp 0.3s ease;
 }
-
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 #profileMessage.success {
     background: rgba(46, 204, 113, 0.15);
     color: #27ae60;
     border: 2px solid rgba(46, 204, 113, 0.3);
     display: block;
 }
-
 #profileMessage.error {
     background: rgba(231, 76, 60, 0.15);
     color: #e74c3c;
     border: 2px solid rgba(231, 76, 60, 0.3);
     display: block;
 }
-
-/* ========== ВКЛАДКА "ТОП-3" ========== */
+/* вкладка "топ" */
 .top-offers-content {
     padding: 28px;
     background: var(--surface);
@@ -723,14 +641,12 @@ body {
     border-radius: 16px;
     box-shadow: var(--shadow-md);
 }
-
 .top-offers-header {
     text-align: center;
     margin-bottom: 32px;
     position: relative;
     padding-bottom: 20px;
 }
-
 .top-offers-header::after {
     content: '';
     position: absolute;
@@ -741,7 +657,6 @@ body {
     background: linear-gradient(90deg, transparent, var(--primary), transparent);
     border-radius: 3px;
 }
-
 .top-offers-header h3 {
     font-size: 26px;
     font-weight: 800;
@@ -752,7 +667,6 @@ body {
     margin-bottom: 10px;
     letter-spacing: -0.5px;
 }
-
 .top-offers-header p {
     font-size: 15px;
     color: var(--text-secondary);
@@ -760,20 +674,17 @@ body {
     max-width: 300px;
     margin: 0 auto;
 }
-
 .top-controls {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-bottom: 32px;
 }
-
 .control-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .control-label {
     display: flex;
     align-items: center;
@@ -784,13 +695,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .control-label i {
     color: var(--primary);
     font-size: 18px;
     width: 24px;
 }
-
 .top-select {
     padding: 14px 18px;
     border: 2px solid var(--border);
@@ -807,14 +716,12 @@ body {
     background-size: 20px;
     font-weight: 500;
 }
-
 .top-select:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(156, 123, 255, 0.15);
     transform: translateY(-1px);
 }
-
 .find-top-btn {
     width: 100%;
     padding: 18px 28px;
@@ -835,22 +742,18 @@ body {
     letter-spacing: 0.5px;
     margin-top: 10px;
 }
-
 .find-top-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(255, 152, 0, 0.5);
 }
-
 .find-top-btn:active {
     transform: translateY(-1px);
 }
-
-/* РЕЗУЛЬТАТЫ ТОП-3 */
+/*результат выгодных предложений*/
 .top-results {
     margin-top: 32px;
     animation: fadeIn 0.5s ease;
 }
-
 .top-results h4 {
     font-size: 20px;
     font-weight: 800;
@@ -861,19 +764,16 @@ body {
     gap: 12px;
     letter-spacing: -0.3px;
 }
-
 .top-results h4 i {
     color: #FFD700;
     font-size: 24px;
     text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
-
 .top-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .top-item {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 255, 0.95));
     border: 2px solid var(--border);
@@ -884,18 +784,15 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
-
 .top-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
-
-/* ПЕРВОЕ МЕСТО - ЗОЛОТО */
+/*выгодное предложение, топ 1: золото*/
 .top-item:nth-child(1) {
     border-color: #FFD700;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 215, 0, 0.12));
 }
-
 .top-item:nth-child(1)::before {
     content: '';
     position: absolute;
@@ -906,13 +803,11 @@ body {
     background: linear-gradient(to bottom, #FFD700, #FFA500, #FF8C00);
     border-radius: 6px 0 0 6px;
 }
-
-/* ВТОРОЕ МЕСТО - СЕРЕБРО */
+/*выгодное предложение, топ 2: серебро*/
 .top-item:nth-child(2) {
     border-color: #C0C0C0;
     background: linear-gradient(135deg, rgba(192, 192, 192, 0.05), rgba(192, 192, 192, 0.12));
 }
-
 .top-item:nth-child(2)::before {
     content: '';
     position: absolute;
@@ -923,13 +818,11 @@ body {
     background: linear-gradient(to bottom, #C0C0C0, #A0A0A0, #808080);
     border-radius: 6px 0 0 6px;
 }
-
-/* ТРЕТЬЕ МЕСТО - БРОНЗА */
+/*выгодное предложение, топ 3: бронза*/
 .top-item:nth-child(3) {
     border-color: #CD7F32;
     background: linear-gradient(135deg, rgba(205, 127, 50, 0.05), rgba(205, 127, 50, 0.12));
 }
-
 .top-item:nth-child(3)::before {
     content: '';
     position: absolute;
@@ -1030,35 +923,30 @@ body {
     background: rgba(231, 76, 60, 0.1);
     border: 1px solid rgba(231, 76, 60, 0.2);
 }
-
 .no-results {
     text-align: center;
     padding: 50px 20px;
     color: var(--text-secondary);
 }
-
 .no-results i {
     font-size: 52px;
     color: var(--border);
     margin-bottom: 20px;
     opacity: 0.5;
 }
-
 .no-results p {
     font-size: 17px;
     font-weight: 500;
     max-width: 250px;
     margin: 0 auto;
 }
-
-/* ========== КАРТА ========== */
+/*карта */
 #map {
     flex: 1;
     height: 100vh;
     background: var(--background);
 }
-
-/* ========== ПАНЕЛЬ ПОЛЬЗОВАТЕЛЯ ========== */
+/*панель пользователя*/
 #userPanel {
     position: absolute;
     top: var(--space-md);
@@ -1076,7 +964,6 @@ body {
     max-width: calc(100% - var(--space-md) * 2);
     overflow: hidden;
 }
-
 .panel-button {
     padding: 12px 20px;
     background: var(--surface);
@@ -1093,60 +980,50 @@ body {
     white-space: nowrap;
     flex-shrink: 0;
 }
-
 .panel-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
-
 .panel-button.auth-btn {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border-color: transparent;
 }
-
 .panel-button.auth-btn:hover {
     background: linear-gradient(135deg, var(--primary-dark), #6A11CB);
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 20px rgba(156, 123, 255, 0.4);
 }
-
 .panel-button.profile-btn:hover {
     background: var(--primary-light);
     border-color: var(--primary-light);
     color: white;
 }
-
 .panel-button.favorites-btn:hover {
     background: #FFD700;
     border-color: #FFD700;
     color: white;
 }
-
 .panel-button.top-btn:hover {
     background: #FF9800;
     border-color: #FF9800;
     color: white;
 }
-
 .panel-button.all-btn:hover {
     background: #4CAF50;
     border-color: #4CAF50;
     color: white;
 }
-
 .panel-button.logout-btn {
     background: rgba(239, 68, 68, 0.1);
     border-color: rgba(239, 68, 68, 0.3);
     color: var(--error);
 }
-
 .panel-button.logout-btn:hover {
     background: var(--error);
     color: white;
     border-color: var(--error);
 }
-
 .user-info {
     display: flex;
     flex-direction: column;
@@ -1155,7 +1032,6 @@ body {
     min-width: 0;
     overflow: hidden;
 }
-
 .greeting {
     font-size: 13px;
     color: var(--text-light);
@@ -1164,7 +1040,6 @@ body {
     text-overflow: ellipsis;
     font-weight: 500;
 }
-
 .username {
     font-size: 16px;
     font-weight: 700;
@@ -1173,7 +1048,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .user-buttons {
     display: flex;
     gap: 10px;
@@ -1182,21 +1056,16 @@ body {
     overflow-x: auto;
     padding-bottom: 4px;
 }
-
 .user-buttons::-webkit-scrollbar {
     height: 4px;
 }
-
 .user-buttons::-webkit-scrollbar-track {
     background: transparent;
 }
-
 .user-buttons::-webkit-scrollbar-thumb {
     background: var(--border);
     border-radius: 2px;
 }
-
-/* ========== МОДАЛЬНОЕ ОКНО ========== */
 #authModal {
     position: fixed;
     top: 0;
@@ -1210,7 +1079,6 @@ body {
     z-index: 2000;
     backdrop-filter: blur(10px);
 }
-
 .modal-overlay {
     position: absolute;
     top: 0;
@@ -1219,7 +1087,6 @@ body {
     height: 100%;
     z-index: 1;
 }
-
 .modal-content {
     position: relative;
     background: var(--surface);
@@ -1232,12 +1099,10 @@ body {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 @keyframes modalSlideIn {
     from { opacity: 0; transform: translateY(-40px) scale(0.95); }
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 .modal-header {
     padding: 0;
     border-bottom: 1px solid var(--border);
@@ -1246,12 +1111,10 @@ body {
     align-items: center;
     background: linear-gradient(135deg, var(--background), #F5F3FF);
 }
-
 .tabs {
     display: flex;
     flex: 1;
 }
-
 .tab {
     flex: 1;
     padding: 22px 24px;
@@ -1269,18 +1132,15 @@ body {
     gap: 10px;
     letter-spacing: 0.5px;
 }
-
 .tab:hover {
     background: rgba(156, 123, 255, 0.05);
     color: var(--primary);
 }
-
 .tab.active {
     background: var(--surface);
     color: var(--primary);
     font-weight: 700;
 }
-
 .tab.active::after {
     content: '';
     position: absolute;
@@ -1291,7 +1151,6 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--primary-light));
     border-radius: 4px 4px 0 0;
 }
-
 .modal-close {
     width: 50px;
     height: 50px;
@@ -1307,30 +1166,24 @@ body {
     margin-right: 10px;
     border-radius: 12px;
 }
-
 .modal-close:hover {
     background: rgba(156, 123, 255, 0.1);
     color: var(--primary);
     transform: rotate(90deg);
 }
-
 .modal-body {
     padding: 32px;
 }
-
 .form-group {
     margin-bottom: 24px;
 }
-
 .form-group:last-child {
     margin-bottom: 0;
 }
-
 .input-with-icon, .select-with-icon {
     position: relative;
     width: 100%;
 }
-
 .input-with-icon i, .select-with-icon i {
     position: absolute;
     left: 20px;
@@ -1340,11 +1193,9 @@ body {
     font-size: 18px;
     z-index: 1;
 }
-
 .select-with-icon i {
     pointer-events: none;
 }
-
 #authModal input,
 #authModal select {
     width: 100%;
@@ -1359,7 +1210,6 @@ body {
     appearance: none;
     font-weight: 500;
 }
-
 #authModal input:focus,
 #authModal select:focus {
     outline: none;
@@ -1367,11 +1217,9 @@ body {
     box-shadow: 0 0 0 4px rgba(156, 123, 255, 0.15);
     transform: translateY(-1px);
 }
-
 #authModal input::placeholder {
     color: var(--text-light);
 }
-
 #authModal select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -1380,13 +1228,11 @@ body {
     cursor: pointer;
     padding-right: 54px;
 }
-
 .modal-buttons {
     display: flex;
     gap: 16px;
     margin-top: 32px;
 }
-
 .btn-primary {
     flex: 1;
     padding: 18px 28px;
@@ -1405,13 +1251,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--primary-dark), #6A11CB);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(156, 123, 255, 0.4);
 }
-
 .message {
     margin-top: 24px;
     padding: 16px 20px;
@@ -1422,22 +1266,18 @@ body {
     display: none;
     animation: slideUp 0.3s ease;
 }
-
 .message.success {
     background: rgba(46, 204, 113, 0.15);
     color: #27ae60;
     border: 2px solid rgba(46, 204, 113, 0.3);
     display: block;
 }
-
 .message.error {
     background: rgba(231, 76, 60, 0.15);
     color: #e74c3c;
     border: 2px solid rgba(231, 76, 60, 0.3);
     display: block;
 }
-
-/* ========== БАЛЛУНЫ ЯНДЕКС КАРТ ========== */
 .ymaps-2-1-79-balloon {
     border-radius: 20px !important;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
@@ -1445,7 +1285,6 @@ body {
     border: 2px solid var(--primary-light) !important;
     overflow: hidden !important;
 }
-
 .ymaps-2-1-79-balloon__content {
     background: transparent !important;
     padding: 24px !important;
@@ -1454,13 +1293,11 @@ body {
     font-size: 15px !important;
     line-height: 1.6 !important;
 }
-
 .ymaps-2-1-79-balloon__content strong {
     color: var(--text-primary) !important;
     font-weight: 700 !important;
     font-size: 16px !important;
 }
-
 .ymaps-2-1-79-balloon__close-button {
     top: 20px !important;
     right: 20px !important;
@@ -1472,12 +1309,10 @@ body {
     transition: all 0.3s ease !important;
     font-size: 18px !important;
 }
-
 .ymaps-2-1-79-balloon__close-button:hover {
     background: var(--primary-dark) !important;
     transform: rotate(90deg) scale(1.1) !important;
 }
-
 .ymaps-2-1-79-balloon button {
     margin-top: 20px;
     padding: 14px 24px;
@@ -1492,35 +1327,27 @@ body {
     font-family: 'Inter', sans-serif !important;
     box-shadow: 0 4px 15px rgba(156, 123, 255, 0.3) !important;
 }
-
 .ymaps-2-1-79-balloon button:hover {
     background: linear-gradient(135deg, var(--primary-dark), #6A11CB) !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(156, 123, 255, 0.4) !important;
 }
-
-/* СКРОЛЛБАР */
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
-
 ::-webkit-scrollbar-track {
     background: rgba(156, 123, 255, 0.05);
     border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--primary-light);
     border-radius: 10px;
     border: 2px solid var(--surface);
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
 }
-
-/* АДАПТИВНОСТЬ */
 @media (max-width: 1024px) {
     .sidebar {
         position: absolute;
@@ -1531,63 +1358,51 @@ body {
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
     }
-
     .sidebar.active {
         transform: translateX(0);
         box-shadow: var(--shadow-xl);
     }
-
     #userPanel {
         flex-wrap: wrap;
         max-width: calc(100% - var(--space-md) * 2);
     }
-
     .user-buttons {
         flex-wrap: wrap;
     }
-
     .profile-header {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
-
     .profile-buttons {
         flex-direction: column;
     }
-
     .top-controls {
         gap: 16px;
     }
-
     .find-top-btn {
         padding: 16px 24px;
         font-size: 16px;
     }
 }
-
 @media (max-width: 768px) {
     :root {
         --space-xl: 24px;
         --space-lg: 20px;
     }
-
     .sidebar-header h2 {
         font-size: 28px;
     }
-
     #userPanel {
         top: var(--space-sm);
         right: var(--space-sm);
         padding: 10px 16px;
         gap: 12px;
     }
-
     .panel-button {
         padding: 10px 16px;
         font-size: 14px;
     }
-
     .modal-content {
         width: 95%;
         max-height: 90vh;
@@ -1644,4 +1459,5 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
