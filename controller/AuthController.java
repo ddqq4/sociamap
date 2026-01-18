@@ -3,7 +3,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.socialmap.model.User;
 import ru.socialmap.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import java.util.HashMap;
 import java.util.Map;
 @RestController
@@ -93,4 +92,5 @@ public class AuthController {
         response.put("message", "Профиль успешно обновлён");
         return response;
     }
+
 }
