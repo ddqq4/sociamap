@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карта организаций Москвы</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey="></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+    </div>
+    <div id="map"></div>
+</div>
+<!-- Панель пользователя -->
+<div id="userPanel">
+    <button id="authButton" class="panel-button auth-btn" onclick="openAuthModal()">
+        <i class="fas fa-user"></i> Войти / Регистрация
+    </button>
+    <div id="loggedInPanel" style="display: none;">
+        <div class="user-info">
+            <span id="greetingSpan" class="greeting"></span>
+            <span id="userName" class="username"></span>
+        </div>
+        <div class="user-buttons">
+            <button class="panel-button profile-btn" onclick="showProfile()">
+                <i class="fas fa-user-circle"></i> Профиль
+            </button>
+            <button class="panel-button favorites-btn" onclick="showFavorites()">
+                <i class="fas fa-star"></i> Избранное
+            </button>
+            <button class="panel-button top-btn" onclick="showBestOffers()">
+                <i class="fas fa-crown"></i> Топ
+            </button>
+            <button class="panel-button all-btn" onclick="showAllOrganizations()">
+                <i class="fas fa-list"></i> Все
+            </button>
+            <button class="panel-button logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </button>
+        </div>
+    </div>
+</div>
+<!-- Окно авторизации -->
+<div id="authModal" style="display: none;">
+    <div class="modal-overlay" onclick="closeAuthModal()"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="tabs">
+                <button class="tab active" id="loginTab" onclick="switchTab('login')">
+                    <i class="fas fa-sign-in-alt"></i> Вход
+                </button>
+                <button class="tab" id="registerTab" onclick="switchTab('register')">
+                    <i class="fas fa-user-plus"></i> Регистрация
+                </button>
+            </div>
+            <button class="modal-close" onclick="closeAuthModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group" id="fullNameGroup">
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input id="fullNameInput" type="text" placeholder="ФИО">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-with-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input id="emailInput" type="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-with-icon">
+                    <i class="fas fa-lock"></i>
+                    <input id="passwordInput" type="password" placeholder="Пароль">
+                </div>
+            </div>
+            <div class="form-group" id="passwordConfirmGroup">
+                <div class="input-with-icon">
+                    <i class="fas fa-lock"></i>
+                    <input id="passwordConfirmInput" type="password" placeholder="Подтвердите пароль">
+                </div>
+            </div>
+            <div class="form-group" id="benefitCategoryGroup">
+                <div class="select-with-icon">
+                    <i class="fas fa-heart"></i>
+                    <select id="benefitCategoryInput">
+                        <option value="">Выберите категорию льготника</option>
+                        <option value="Члены многодетных семей">Члены многодетных семей</option>
+                        <option value="Инвалиды">Инвалиды</option>
+                        <option value="Ветераны ВОВ, боевых действий и службы">Ветераны ВОВ, боевых действий и службы</option>
+                        <option value="Учащиеся">Учащиеся</option>
+                        <option value="Студенты, ординаторы, аспиранты">Студенты, ординаторы, аспиранты</option>
+                        <option value="Пенсионеры и ветераны труда">Пенсионеры и ветераны труда</option>
+                        <option value="Иные льготные категории">Иные льготные категории</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button id="registerBtn" class="btn-primary" onclick="registerUser()">
+                    <i class="fas fa-user-plus"></i> Зарегистрироваться
+                </button>
+                <button id="loginBtn" class="btn-primary" onclick="loginUser()">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+            </div>
+            <div id="authMessage" class="message"></div>
+        </div>
+    </div>
+</div>
+<script src="/js/app.js"></script>
+<script>
+    // Дополнительные функции для нового дизайна
+    function switchTab(tab) {
+        const loginTab = document.getElementById('loginTab');
+        const registerTab = document.getElementById('registerTab');
+        const fullNameGroup = document.getElementById('fullNameGroup');
+        const passwordConfirmGroup = document.getElementById('passwordConfirmGroup');
+        const benefitCategoryGroup = document.getElementById('benefitCategoryGroup');
+        const registerBtn = document.getElementById('registerBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        // Убираем активный класс со всех вкладок
+        loginTab.classList.remove('active');
+        registerTab.classList.remove('active');
+        if (tab === 'login') {
+            // Показываем вкладку Вход
+            loginTab.classList.add('active');
+            fullNameGroup.style.display = 'none';
+            passwordConfirmGroup.style.display = 'none';
+            benefitCategoryGroup.style.display = 'none';
+            registerBtn.style.display = 'none';
+            loginBtn.style.display = 'block';
+        } else {
+            // Показываем вкладку Регистрация
+            registerTab.classList.add('active');
+            fullNameGroup.style.display = 'block';
+            passwordConfirmGroup.style.display = 'block';
+            benefitCategoryGroup.style.display = 'block';
+            registerBtn.style.display = 'block';
+            loginBtn.style.display = 'none';
+        }
+    }
+    // При загрузке страницы показываем вкладку Вход
+    document.addEventListener('DOMContentLoaded', function() {
+        switchTab('login');
+        // Закрытие модального окна по клику на оверлей
+        const modal = document.getElementById('authModal');
+        modal.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeAuthModal();
+            }
+        });
+    });
+</script>
+</body>
+</html>
