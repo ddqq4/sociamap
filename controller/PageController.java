@@ -7,9 +7,9 @@ public class PageController {
     public String home() {
         return "redirect:/index.html";
     }
-
     @GetMapping("/map")
     public String map() {
         return "index";
     }
+
 }
