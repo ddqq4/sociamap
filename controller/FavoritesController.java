@@ -2,7 +2,6 @@ package ru.socialmap.controller;
 import org.springframework.web.bind.annotation.*;
 import ru.socialmap.model.Favorite;
 import ru.socialmap.repository.FavoriteRepository;
-
 import java.util.HashMap;
 import java.util.Map;
 @RestController
