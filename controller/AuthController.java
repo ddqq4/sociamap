@@ -92,5 +92,4 @@ public class AuthController {
         response.put("message", "Профиль успешно обновлён");
         return response;
     }
-
 }
