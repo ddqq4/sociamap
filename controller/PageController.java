@@ -11,5 +11,4 @@ public class PageController {
     public String map() {
         return "index";
     }
-
 }
